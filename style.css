@@ -1,0 +1,102 @@
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+
+    body { background: #000; color: #e5e7eb; overflow-x: hidden; }
+
+    /* Parallax background */
+    .bg {
+      position: fixed;
+      inset: 0;
+      background-image: url('/public/2g.jpg');
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.1);
+      z-index: -2;
+      animation: slowZoom 30s ease-in-out infinite alternate;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,.4), rgba(0,0,0,.8));
+      z-index: -1;
+    }
+
+    @keyframes slowZoom {
+      from { transform: scale(1.05); }
+      to { transform: scale(1.15); }
+    }
+
+    header {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      text-shadow: 0 10px 30px rgba(0,0,0,.8);
+      animation: fadeDown 1.5s ease;
+    }
+
+    section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 10%;
+      gap: 50px;
+      backdrop-filter: blur(3px);
+    }
+
+    .content {
+      flex: 1;
+      animation: fadeUp 1.2s ease;
+    }
+
+    .content h2 { font-size: 2.2rem; margin-bottom: 20px; }
+    .content p { line-height: 1.8; font-size: 1.1rem; }
+
+    .image {
+      flex: 1;
+      animation: fadeUp 1.4s ease;
+    }
+
+    .image img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 30px 60px rgba(189, 137, 137, 0.6);
+      transition: transform .6s ease;
+    }
+
+    .image img:hover { transform: scale(1.05); }
+
+    section:nth-child(even) {
+      flex-direction: row-reverse;
+      background-image: url('5g.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    section:nth-child(odd) {
+      background-image: url('6g.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      section { flex-direction: column; padding: 50px 20px; }
+      section:nth-child(even) { flex-direction: column; }
+    }
