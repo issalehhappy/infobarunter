@@ -6,7 +6,7 @@
     .bg {
       position: fixed;
       inset: 0;
-      background-image: url('/public/2g.jpg');
+      background-image: url('./public/2g.jpg');
       background-size: cover;
       background-position: center;
       transform: scale(1.1);
@@ -99,4 +99,5 @@
     @media (max-width: 768px) {
       section { flex-direction: column; padding: 50px 20px; }
       section:nth-child(even) { flex-direction: column; }
+
     }
