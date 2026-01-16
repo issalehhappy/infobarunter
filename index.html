@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Game Info – Animated Background</title>
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
@@ -14,6 +14,30 @@
 <header>
   <h1>حانة الصيادين-hunter bar</h1>
 </header>
+  <section className="min-h-screen flex items-center justify-center px-6 md:px-20">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className="w-full max-w-4xl rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-black/40 backdrop-blur-lg"
+        >
+          <div className="p-6 text-center">
+            <h2 className="text-3xl font-semibold mb-4">Game Trailer</h2>
+            <p className="text-gray-300 mb-6">
+              Watch the official gameplay trailer and step into the world.
+            </p>
+          </div>
+
+          <video
+            controls
+            className="w-full h-auto"
+            poster="./public/videosforgame.mp4"
+          >
+            <source controls src="./public/videosforgame.mp4" type="video/mp4" />
+          </video>
+        </motion.div>
+      </section>
 
 <section>
   <div class="content">
@@ -24,7 +48,7 @@
     </p>
   </div>
   <div class="image">
-    <img src="/public/1g.jpg" alt="Game scene" />
+    <img src="./public/1g.jpg" alt="Game scene" />
   </div>
 </section>
 
@@ -37,7 +61,7 @@
     </p>
   </div>
   <div class="image">
-    <img src="/public/2g.jpg" alt="Gameplay" />
+    <img src="./public/2g.jpg" alt="Gameplay" />
   </div>
 </section>
 
@@ -50,7 +74,7 @@
     </p>
   </div>
   <div class="image">
-    <img src="/public/5g.jpg" alt="Immersive scene" />
+    <img src="./public/5g.jpg" alt="Immersive scene" />
   </div>
 </section>
 <section>
@@ -62,8 +86,9 @@
     </p>
   </div>
   <div class="image">
-    <img src="/public/6g.jpg" alt="Gameplay" />
+    <img src="./public/6g.jpg" alt="Gameplay" />
     </div>
 </section>
 </body>
 </html>
+
